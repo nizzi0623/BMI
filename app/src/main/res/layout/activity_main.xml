@@ -9,12 +9,13 @@
     tools:layout_editor_absoluteX="0dp">
 
     <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        tools:layout_editor_absoluteY="7dp"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="7dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -26,7 +27,7 @@
         tools:layout_editor_absoluteY="150dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edit_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -35,7 +36,7 @@
         tools:layout_editor_absoluteY="65dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edit_hight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -44,15 +45,15 @@
         tools:layout_editor_absoluteY="188dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/b_bmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Caculate BMI"
+        android:text="Calculate BMI"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="246dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/b_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INFO"
