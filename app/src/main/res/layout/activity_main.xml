@@ -36,7 +36,7 @@
         tools:layout_editor_absoluteY="65dp" />
 
     <EditText
-        android:id="@+id/edit_hight"
+        android:id="@+id/edit_height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -48,6 +48,7 @@
         android:id="@+id/b_bmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="bmi"
         android:text="Calculate BMI"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="246dp" />
