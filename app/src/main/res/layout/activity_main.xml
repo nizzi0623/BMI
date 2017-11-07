@@ -12,7 +12,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight"
+        android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="7dp" />
@@ -21,7 +21,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Height"
+        android:text="@string/height"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="150dp" />
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="bmi"
-        android:text="Calculate BMI"
+        android:text="@string/calculate_bmi"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="246dp" />
 
@@ -57,7 +57,7 @@
         android:id="@+id/b_help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INFO"
+        android:text="@string/info"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="312dp" />
 
