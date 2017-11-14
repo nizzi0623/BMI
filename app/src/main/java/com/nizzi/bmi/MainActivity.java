@@ -38,29 +38,36 @@ public class MainActivity extends AppCompatActivity {
 
         //getResources().getString(R.string.app_name);
     }
-    public void bmi (View view){
+    public void bmi (View view) {
         //System.out.println("what???");
         Log.d("MainActivity", "testing bmi method");
         EditText edWeight = (EditText) findViewById(R.id.edit_weight);
         EditText edHeight = (EditText) findViewById(R.id.edit_height);
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
-        float bmi = weight/(height * height);
+        float bmi = weight / (height * height);
         //Log.d("MainActivity", "Your bmi" + bmi);
-        if (bmi < 20){
+        if (height > 3) {
             new AlertDialog.Builder(this)
-                    .setMessage(getString(R.string.your_bmi_is) + bmi  + "\n請多吃點")
-                    .setTitle(R.string.my_title)
-                    .setPositiveButton(R.string.ok, null)
-                    .show();
-        }else{
-            new AlertDialog.Builder(this)
-                    .setMessage(getString(R.string.your_bmi_is) + bmi)
-                    .setTitle(R.string.my_title)
+                    .setMessage("身高單位應為公尺")
                     .setPositiveButton(R.string.ok, null)
                     .show();
         }
-
+        if (height < 3) {
+            if (bmi < 20) {
+                new AlertDialog.Builder(this)
+                        .setMessage(getString(R.string.your_bmi_is) + bmi + "\n請多吃點")
+                        .setTitle(R.string.my_title)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            } else {
+                new AlertDialog.Builder(this)
+                        .setMessage(getString(R.string.your_bmi_is) + bmi)
+                        .setTitle(R.string.my_title)
+                        .setPositiveButton(R.string.ok, null)
+                        .show();
+            }
+        }
 
 
     }
