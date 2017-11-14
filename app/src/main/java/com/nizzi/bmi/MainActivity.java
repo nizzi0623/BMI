@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,11 +47,20 @@ public class MainActivity extends AppCompatActivity {
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight/(height * height);
         //Log.d("MainActivity", "Your bmi" + bmi);
-        new AlertDialog.Builder(this)
-                .setMessage(getString(R.string.your_bmi_is) + bmi)
-                .setTitle(R.string.my_title)
-                .setPositiveButton(R.string.ok, null)
-                .show();
+        if (bmi < 20){
+            new AlertDialog.Builder(this)
+                    .setMessage(getString(R.string.your_bmi_is) + bmi  + "\n請多吃點")
+                    .setTitle(R.string.my_title)
+                    .setPositiveButton(R.string.ok, null)
+                    .show();
+        }else{
+            new AlertDialog.Builder(this)
+                    .setMessage(getString(R.string.your_bmi_is) + bmi)
+                    .setTitle(R.string.my_title)
+                    .setPositiveButton(R.string.ok, null)
+                    .show();
+        }
+
 
 
     }
