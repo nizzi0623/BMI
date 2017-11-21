@@ -1,5 +1,6 @@
 package com.nizzi.bmi;
 
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,50 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private EditText edWeight;
+    private EditText edHeight;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity", "OnStart");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("MainActivity", "OnStop");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("MainActivity", "OnDestroy");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("MainActivity", "OnPause");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("MainActivity", "OnResume");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("MainActivity", "OnRestart");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        Log.d("MainActivity", "OnCreate");
 
 
         //getResources().getString(R.string.app_name);
@@ -41,11 +87,14 @@ public class MainActivity extends AppCompatActivity {
     public void bmi (View view) {
         //System.out.println("what???");
         Log.d("MainActivity", "testing bmi method");
-        EditText edWeight = (EditText) findViewById(R.id.edit_weight);
-        EditText edHeight = (EditText) findViewById(R.id.edit_height);
+        edWeight = (EditText) findViewById(R.id.edit_weight);
+        edHeight = (EditText) findViewById(R.id.edit_height);
         float weight = Float.parseFloat(edWeight.getText().toString());
         float height = Float.parseFloat(edHeight.getText().toString());
         float bmi = weight / (height * height);
+        Intent intent = new Intent(this, ResultActivity.class);
+        intent.putExtra("BMI_EXTRA", bmi);
+        startActivity(intent);
         //Log.d("MainActivity", "Your bmi" + bmi);
         if (height > 3) {
             new AlertDialog.Builder(this)
